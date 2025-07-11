@@ -32,6 +32,9 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/animate.css/animate.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -96,6 +99,9 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/animate.css/animate.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f471b7a6-50fc-45b1-ba19-aec82dd7edd7"
   }
 }
