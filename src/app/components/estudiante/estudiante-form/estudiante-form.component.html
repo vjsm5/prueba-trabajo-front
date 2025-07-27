@@ -1,17 +1,31 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-3 bg-white rounded shadow-sm animate__animated animate__fadeInLeft">
+<form [formGroup]="form" (ngSubmit)="altaEstudiante()" class="p-3 bg-white rounded shadow-sm animate__animated animate__fadeInLeft">
   <mat-form-field appearance="outline" class="w-100 mb-2">
-    <mat-label>Nombre</mat-label>
-    <input matInput formControlName="name">
+    <mat-label>Nombre(s)</mat-label>
+    <input matInput formControlName="nombre_estudiante" (keypress)="allowOnlyLetters($event)">
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="w-100 mb-2">
-    <mat-label>Email</mat-label>
-    <input matInput formControlName="email">
+    <mat-label>Apellido paterno</mat-label>
+    <input matInput formControlName="ap_paterno" (keypress)="allowOnlyLetters($event)">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100 mb-2">
+    <mat-label>Apellido materno</mat-label>
+    <input matInput formControlName="ap_materno" (keypress)="allowOnlyLetters($event)">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="w-100 mb-2">
+    <mat-label>Edad</mat-label>
+    <input matInput formControlName="edad" maxlength="2" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;">
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="w-100 mb-3">
-    <mat-label>Edad</mat-label>
-    <input type="number" matInput formControlName="age">
+    <mat-label>Género</mat-label>
+    <mat-select formControlName="genero">
+      <mat-option *ngFor="let generous of arrayGeneros" [value]="generous.id_genero">
+        {{ generous.nombre_genero }}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit">
